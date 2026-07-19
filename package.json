@@ -1,0 +1,16 @@
+{
+  "name": "home-service-booking-platform-root",
+  "version": "1.0.0",
+  "description": "Root workspace config for Home Service Booking Platform",
+  "scripts": {
+    "install:backend": "npm install --prefix backend",
+    "install:frontend": "npm install --prefix frontend --legacy-peer-deps",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "start:backend": "npm run dev --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "seed": "npm run seed --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
