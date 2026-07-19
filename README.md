@@ -1,7 +1,7 @@
-# SERVENEXA 
+# SERVNEXA 
 connecting customers,empowering procviders managing services
 
-HomeEase is a complete, production-ready, full-stack Cloud-Based Home Service Booking Platform that connects customers with verified local service professionals (electricians, plumbers, cleaners, technicians). The platform is built on a Node.js/Express backend, React.js frontend, and a MongoDB Atlas database.
+ServNexa is a complete, production-ready, full-stack Cloud-Based Home Service Booking Platform that connects customers with verified local service professionals (electricians, plumbers, cleaners, technicians). The platform is built on a Node.js/Express backend, React.js frontend, and a MongoDB Atlas database.
 
 ---
 
