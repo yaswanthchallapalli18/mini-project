@@ -26,14 +26,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: '*',
+    origin: 'https://mini-project-two-woad.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
 
 // Middlewares
 app.use(cors({
-  origin: '*', // Allow all origins for dev simplicity, can narrow down in production
+  origin: 'https://mini-project-two-woad.vercel.app', // Allow all origins for dev simplicity, can narrow down in production
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
