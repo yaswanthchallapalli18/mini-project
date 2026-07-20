@@ -1,39 +1,40 @@
 import axios from 'axios';
 
-// Base API URL config
-const API_URL = import.meta.env.VITE_API_URL || "https://mini-project-hseq.onrender.com";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  'https://mini-project-hseq.onrender.com';
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: `${API_URL}/api`,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Request Interceptor to add JWT Auth token
+// Add JWT token to requests
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response Interceptor for global error handling
+// Global error handling
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
-      // Clear expired session tokens
+    if (error.response?.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       localStorage.removeItem('role');
     }
+
     return Promise.reject(error);
   }
 );
